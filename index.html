@@ -7,6 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <link rel="shortcut icon" href="https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2016.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -21,16 +22,60 @@
             background: black;
         }
 
-        h1, p {
+        h1,
+        p {
             color: #333333;
         }
 
-        h5 {
+        h5,
+        h6 {
             color: #999999;
         }
 
         .btn {
             background-color: #EAEAEA !important;
+        }
+
+        .nav li {
+            display: inline;
+        }
+
+        .nav li a {
+            color: #999999;
+            text-decoration: none;
+            padding-left: 20px;
+            font-weight: bold;
+        }
+
+        .nav li a:hover {
+            color:white;
+        }
+
+        .text-left,
+        .text-right {
+            display: inline !important;
+        }
+
+        .text-left img {
+            margin-bottom: 20px;
+        }
+
+        .container {
+            padding: 50px;
+        }
+
+        .container a {
+            display: block;
+        }
+
+        .container hr {
+            border-color: black;
+        }
+
+        .container-fluid a {
+            font-size: 12px;
+            padding: 10px 25px;
+            color: #999999;
         }
     </style>
 </head>
@@ -39,19 +84,20 @@
     <nav class="navbar navbar-custom">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#"><img style="width:50%"
+                <a class="navbar-brand" href="#"><img style="width:55%; margin:-5px;"
                         src="https://fontmeme.com/permalink/191025/23c21e73bc5321e9d4cd67900457f4b2.png"></a>
             </div>
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Page 1</a></li>
-                <li><a href="#">Page 2</a></li>
-                <li><a href="#">Page 3</a></li>
+            <ul style="display: inline-block" class="nav navbar-nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">TV Shows</a></li>
+                <li><a href="#">Movies</a></li>
+                <li><a href="#">Recently Added</a></li>
+                <li><a href="#">My List</a></li>
             </ul>
         </div>
     </nav>
 
-    <div class="container p-50">
+    <div class="container">
         <h1>Account</h1>
         <hr>
         <div class="row">
@@ -60,23 +106,29 @@
                 <button class="btn  shadow-sm p-3 mb-5 bg-white rounded">Cancel Membership</button>
             </div>
             <div class="col-8">
-                <div class="col-6 text-left">
-                        <p class="font-weight-bold">student@strive.school</p>
-                        <p style="color:#999999">Password: *********</p>
+                <div class="text-left">
+                    <p class="font-weight-bold">student@strive.school</p>
+                    <p style="color:#999999">Password: *********</p>
                 </div>
-                <div class="col-6 text-right d-block">
-                        <a href="#">Change account email</a>
-                        <a href="#">Change password</a>
-                        <a href="#">Change phone number</a>
+                <div class="text-right">
+                    <a href="#">Change account email</a>
+                    <a href="#">Change password</a>
+                    <a href="#">Change phone number</a>
                 </div>
                 <hr>
-                <div class="col text-left">
-                        <i class="fa fa-paypal" aria-hidden="true"></i>
-                        <p class="text-left font-weight-bold">student@strive.school</p>
+                <div class="text-left d-inline">
+                    <i class="fa fa-paypal" aria-hidden="true"></i>
+                    <p class="text-left font-weight-bold">student@strive.school</p>
                 </div>
-                
-
-
+                <div class="text-right">
+                    <a href="#">Update payment info</a>
+                    <a href="#">Billing details</a>
+                </div>
+                <hr>
+                <div class="text-right">
+                    <a href="#">Redeem gift card or promo code</a>
+                    <a href="#">Where to buy gift cards</a>
+                </div>
             </div>
         </div>
         <hr>
@@ -85,27 +137,89 @@
                 <h5>PLAN DETAILS</h5>
             </div>
             <div class="col-8">
-                
+                <div class="text-left">
+                    <p class="font-weight-bold">Premium</p>
+                </div>
+                <div class="text-right">
+                    <a href="#">Change plan</a>
+                </div>
             </div>
         </div>
         <hr>
         <div class="row">
-            <div class="col">
+            <div class="col-4">
                 <h5>SETTINGS</h5>
             </div>
-            <div class="col">
-
+            <div class="col-8">
+                <a href="#">Parental controls</a>
+                <a href="#">Test participation</a>
+                <a href="#">Manage download devices</a>
+                <a href="#">Activate a device</a>
+                <a href="#">Recent device streaming activity</a>
+                <a href="#">Sign out of all devices</a>
             </div>
         </div>
-        <hr>
+        <hr style="opacity: 0.6 ">
         <div class="row">
-                <div class="col">
-                    <h5>MY PROFILE</h5>
+            <div class="col-4">
+                <h5>MY PROFILE</h5>
+            </div>
+            <div class="col-8">
+                <div class="text-left">
+                    <img width="8%"
+                        src="https://occ-0-2473-778.1.nflxso.net/art/b40df/8bbeaad6a7c5764ba64eb58c68331773726b40df.png"
+                        alt="Profile Avatar">
+                    <p class="text-left font-weight-bold">Strive Student</p>
+                    <a href="#">Language</a>
+                    <a href="#">Playback setting</a>
+                    <a href="#">Subtitle appearance</a>
                 </div>
-                <div class="col">
-    
+                <div class="text-right">
+                    <a href="#">Manage profiles</a>
                 </div>
             </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container-fluid pl-5 pt-3 pb-3">
+        <h6>Questions? Contact us.</h6>
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <a href="#">Audio and Subtitles</a>
+                </div>
+                <div class="row">
+                    <a href="#">Media Center</a>
+                </div>
+                <div class="row">
+                    <a href="#">Privacy Statement</a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <a href="#">Help Center</a>
+                </div>
+                <div class="row">
+                    <a href="#">Jobs</a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <a href="#">Gift Cards</a>
+                </div>
+                <div class="row">
+                    <a href="#">Cookie Preferences</a>
+                </div>
+            </div>
+            <div class="col">
+                    <div class="row">
+                        <a href="#">Investor Relations</a>
+                    </div>
+                    <div class="row">
+                        <a href="#">Terms of Use</a>
+                    </div>
+                </div>
+        </div>
     </div>
 
     <!-- Optional JavaScript -->
