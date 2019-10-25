@@ -43,15 +43,14 @@
         }
 
         .nav li a {
-            color: #999999;
+            color: #cccccc;
             text-decoration: none;
-            padding-left: 20px;
-            font-weight: bold;
+            padding: auto;
             font-size: 100%;
         }
 
         .nav li a:hover {
-            color:white;
+            color: white;
         }
 
         .text-left,
@@ -64,7 +63,8 @@
         }
 
         .container {
-            padding: 3%;
+            padding-top: 3%;
+            padding-left: 0;
         }
 
         .container a {
@@ -76,9 +76,55 @@
         }
 
         .container-fluid a {
-            font-size: 12px;
-            padding: 10px 25px;
-            color: #999999;
+            padding: 2% 2%;
+        }
+
+        nav i {
+            color: #cccccc;
+        }
+
+        .left {
+            text-align: left !important;
+        }
+
+        .right {
+            text-align: right !important;
+        }
+
+        .dropdown-menu {
+            font-size: 14px;
+            left: -150%;
+        }
+
+        .dropdown-item {
+            background-color: black !important;
+            color: white !important;
+            padding: 10px !important;
+        }
+
+        .dropdown-item:hover {
+            color: white !important;
+            text-decoration: underline;
+        }
+
+        .form-control {
+            background-color: black;
+            border-radius: 0;
+            color: #cccccc;
+            display: none;
+        }
+
+        .form-control:focus {
+            background-color: black;
+            color: #cccccc;
+            border-color: inherit;
+            box-shadow: none;
+        }
+
+        @media screen and (max-width: 800px) {
+            .navbar-nav {
+                display: none !important;
+            }
         }
     </style>
 </head>
@@ -86,18 +132,40 @@
 <body>
     <nav class="navbar navbar-custom">
         <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#"><img style="width:55%; margin:-5px;"
-                        src="https://fontmeme.com/permalink/191025/23c21e73bc5321e9d4cd67900457f4b2.png"></a>
+            <div class="row">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#"><img style="width:55%; margin:-5px;"
+                            src="https://fontmeme.com/permalink/191025/23c21e73bc5321e9d4cd67900457f4b2.png"></a>
+                </div>
             </div>
-            <ul style="display: table-cell" class="nav navbar-nav">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">TV Shows</a></li>
-                <li><a href="#">Movies</a></li>
-                <li><a href="#">Recently Added</a></li>
-                <li><a href="#">My List</a></li>
-            </ul>
-            <i class="fa fa-search"></i>
+            <div class="col">
+                <ul id="hide" style="display: inline" class="nav navbar-nav">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">TV Shows</a></li>
+                    <li><a href="#">Movies</a></li>
+                    <li><a href="#">Recently Added</a></li>
+                    <li><a href="#">My List</a></li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="md-form mb-1">
+                    <input id="search" class="form-control" type="text" placeholder="Titles, people, genres"
+                        aria-label="Search">
+                </div>
+                <i class="fa fa-search mt-2 mr-3 ml-3" onclick="search()"></i>
+                <div class="dropdown dropdown-toggle">
+                    <img class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false"
+                        src="https://occ-0-2473-778.1.nflxso.net/art/b40df/8bbeaad6a7c5764ba64eb58c68331773726b40df.png"
+                        alt="Profile Avatar">
+                    <div class="dropdown-menu p-0" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Account</a>
+                        <a class="dropdown-item" href="#">Help Center</a>
+                        <a class="dropdown-item" href="#">Sign out of Netflix</a>
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
     </nav>
 
@@ -105,31 +173,37 @@
         <h1>Account</h1>
         <hr>
         <div class="row">
-            <div class="col-4">
+            <div class="col-md-4">
                 <h5>MEMBERSHIP & BILLING</h5>
                 <button class="btn  shadow-sm p-3 mb-5 bg-white rounded">Cancel Membership</button>
             </div>
-            <div class="col-8">
-                <div class="text-left">
-                    <p class="font-weight-bold">student@strive.school</p>
-                    <p style="color:#999999">Password: *********</p>
-                </div>
-                <div class="text-right">
-                    <a href="#">Change account email</a>
-                    <a href="#">Change password</a>
-                    <a href="#">Change phone number</a>
-                </div>
-                <hr>
-                <div class="text-left">
-                    <i class="fa fa-paypal" aria-hidden="true"></i>
-                    <p class="text-left font-weight-bold">student@strive.school</p>
-                </div>
-                <div class="text-right">
-                    <a href="#">Update payment info</a>
-                    <a href="#">Billing details</a>
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col left">
+                        <p class="font-weight-bold">student@strive.school</p>
+                        <p style="color:#999999">Password: *********</p>
+                    </div>
+                    <div class="col right">
+                        <a href="#">Change account email</a>
+                        <a href="#">Change password</a>
+                        <a href="#">Change phone number</a>
+                    </div>
                 </div>
                 <hr>
-                <div class="text-right">
+                <div class="row">
+                    <div class="col left">
+                        <i class="fa fa-paypal" aria-hidden="true"></i><img class="p-0.5 m-1" height="22px"
+                            src="https://i.postimg.cc/05MrmbCV/pp.png" alt="PayPal">
+                        <p class="text-left font-weight-bold">student@strive.school</p>
+                    </div>
+                    <div class="col right">
+
+                        <a href="#">Update payment info</a>
+                        <a href="#">Billing details</a>
+                    </div>
+                </div>
+                <hr>
+                <div class="right">
                     <a href="#">Redeem gift card or promo code</a>
                     <a href="#">Where to buy gift cards</a>
                 </div>
@@ -137,57 +211,72 @@
         </div>
         <hr>
         <div class="row">
-            <div class="col-4">
+            <div class="col-md-4">
                 <h5>PLAN DETAILS</h5>
             </div>
-            <div class="col-8">
-                <div class="text-left">
-                    <p class="font-weight-bold">Premium 
-                        <svg viewBox="0 0 4770 960" class="quality-icon">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <path d="M724,595 C724,642 714,672 694,684 C673,696 622,702 538,702 C460,702 412,696 393,684 C373,672 363,642 363,595 L363,247 L291,247 L291,612 C291,665 309,701 344,721 C379,739 445,749 543,749 C647,749 715,739 748,720 C780,700 796,659 796,595 L796,247 L724,247 L724,595 Z M1013,691 L1013,247 L941,247 L941,744 L1341,744 L1341,691 L1013,691 Z M1858,299 L1858,247 L1372,247 L1372,299 L1580,299 L1580,744 L1652,744 L1652,299 L1858,299 Z M2428,617 C2428,556 2394,525 2327,520 L2327,519 C2369,515 2398,503 2414,484 C2429,467 2437,434 2437,388 C2437,336 2422,300 2394,278 C2366,257 2318,247 2249,247 L1946,247 L1946,744 L2018,744 L2018,542 L2259,542 C2323,542 2356,571 2356,629 L2356,744 L2428,744 L2428,617 Z M2337,475 C2318,489 2281,495 2225,495 L2018,495 L2018,295 L2250,295 C2299,295 2331,301 2345,314 C2360,328 2368,358 2368,402 C2368,438 2358,462 2337,475 Z M3008,744 L3083,744 L2844,247 L2743,247 L2510,744 L2586,744 L2635,639 L2958,639 L3008,744 Z M2937,596 L2656,596 L2795,292 L2937,596 Z M3730,549 L3428,549 L3428,746 L3330,746 L3330,247 L3428,247 L3428,443 L3730,443 L3730,247 L3829,247 L3829,746 L3730,746 L3730,549 Z M4226,247 C4301,247 4356,260 4389,286 C4417,306 4438,335 4454,372 C4470,408 4478,449 4478,493 C4478,591 4449,661 4389,706 C4356,732 4301,746 4226,746 L3980,746 L3980,247 L4226,247 Z M4216,639 C4346,639 4373,562 4373,493 C4373,427 4359,351 4216,351 L4078,351 L4078,639 L4216,639 Z" fill="currentColor"></path><path d="M4638.00019,0 C4711.00009,0 4770,59 4770,132 L4770,827 C4770,868.423884 4751.51202,905.147426 4722.42954,929.452533 C4699.55882,948.56629 4670.13605,960 4638.00019,960 L133.999803,960 C58.9999134,960 0,901 0,827 L0,132 C0,59 58.9999134,0 133.999803,0 L4638.00019,0 Z M133.999803,80 C103.999847,80 79.9998826,103 79.9998826,132 L79.9998826,827 C79.9998826,857 103.999847,880 133.999803,880 L4638.00019,880 C4667.00015,880 4690.00012,856 4690.00012,827 L4690.00012,132 C4690.00012,103 4667.00015,80 4638.00019,80 L133.999803,80 Z" fill="currentColor"></path>
-                            </g>
-                        </svg>
-                    </p>
-                </div>
-                <div class="text-right">
-                    <a href="#">Change plan</a>
+            <div class="col-md-8">
+                <div class="row">
+
+                    <div class="col left">
+                        <p class="font-weight-bold">Premium
+                            <svg height="20px" viewBox="0 0 4770 960" class="quality-icon">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <path
+                                        d="M724,595 C724,642 714,672 694,684 C673,696 622,702 538,702 C460,702 412,696 393,684 C373,672 363,642 363,595 L363,247 L291,247 L291,612 C291,665 309,701 344,721 C379,739 445,749 543,749 C647,749 715,739 748,720 C780,700 796,659 796,595 L796,247 L724,247 L724,595 Z M1013,691 L1013,247 L941,247 L941,744 L1341,744 L1341,691 L1013,691 Z M1858,299 L1858,247 L1372,247 L1372,299 L1580,299 L1580,744 L1652,744 L1652,299 L1858,299 Z M2428,617 C2428,556 2394,525 2327,520 L2327,519 C2369,515 2398,503 2414,484 C2429,467 2437,434 2437,388 C2437,336 2422,300 2394,278 C2366,257 2318,247 2249,247 L1946,247 L1946,744 L2018,744 L2018,542 L2259,542 C2323,542 2356,571 2356,629 L2356,744 L2428,744 L2428,617 Z M2337,475 C2318,489 2281,495 2225,495 L2018,495 L2018,295 L2250,295 C2299,295 2331,301 2345,314 C2360,328 2368,358 2368,402 C2368,438 2358,462 2337,475 Z M3008,744 L3083,744 L2844,247 L2743,247 L2510,744 L2586,744 L2635,639 L2958,639 L3008,744 Z M2937,596 L2656,596 L2795,292 L2937,596 Z M3730,549 L3428,549 L3428,746 L3330,746 L3330,247 L3428,247 L3428,443 L3730,443 L3730,247 L3829,247 L3829,746 L3730,746 L3730,549 Z M4226,247 C4301,247 4356,260 4389,286 C4417,306 4438,335 4454,372 C4470,408 4478,449 4478,493 C4478,591 4449,661 4389,706 C4356,732 4301,746 4226,746 L3980,746 L3980,247 L4226,247 Z M4216,639 C4346,639 4373,562 4373,493 C4373,427 4359,351 4216,351 L4078,351 L4078,639 L4216,639 Z"
+                                        fill="currentColor"></path>
+                                    <path
+                                        d="M4638.00019,0 C4711.00009,0 4770,59 4770,132 L4770,827 C4770,868.423884 4751.51202,905.147426 4722.42954,929.452533 C4699.55882,948.56629 4670.13605,960 4638.00019,960 L133.999803,960 C58.9999134,960 0,901 0,827 L0,132 C0,59 58.9999134,0 133.999803,0 L4638.00019,0 Z M133.999803,80 C103.999847,80 79.9998826,103 79.9998826,132 L79.9998826,827 C79.9998826,857 103.999847,880 133.999803,880 L4638.00019,880 C4667.00015,880 4690.00012,856 4690.00012,827 L4690.00012,132 C4690.00012,103 4667.00015,80 4638.00019,80 L133.999803,80 Z"
+                                        fill="currentColor"></path>
+                                </g>
+                            </svg>
+                        </p>
+                    </div>
+                    <div class="col right">
+                        <a href="#">Change plan</a>
+                    </div>
                 </div>
             </div>
         </div>
         <hr>
         <div class="row">
-            <div class="col-4">
+            <div class="col-md-4">
                 <h5>SETTINGS</h5>
             </div>
-            <div class="col-8">
-                <a href="#">Parental controls</a>
-                <a href="#">Test participation</a>
-                <a href="#">Manage download devices</a>
-                <a href="#">Activate a device</a>
-                <a href="#">Recent device streaming activity</a>
-                <a href="#">Sign out of all devices</a>
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col">
+
+                        <a href="#">Parental controls</a>
+                        <a href="#">Test participation</a>
+                        <a href="#">Manage download devices</a>
+                        <a href="#">Activate a device</a>
+                        <a href="#">Recent device streaming activity</a>
+                        <a href="#">Sign out of all devices</a>
+                    </div>
+                </div>
             </div>
         </div>
         <hr style="opacity: 0.6 ">
         <div class="row">
-            <div class="col-4">
+            <div class="col-md-4">
                 <h5>MY PROFILE</h5>
             </div>
-            <div class="col-8">
-                <div class="text-left">
-                    <img width="8%"
-                        src="https://occ-0-2473-778.1.nflxso.net/art/b40df/8bbeaad6a7c5764ba64eb58c68331773726b40df.png"
-                        alt="Profile Avatar">
-                    <p class="text-left font-weight-bold">Strive Student</p>
-                    <a href="#">Language</a>
-                    <a href="#">Playback setting</a>
-                    <a href="#">Subtitle appearance</a>
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col left">
+                        <img width="8%"
+                            src="https://occ-0-2473-778.1.nflxso.net/art/b40df/8bbeaad6a7c5764ba64eb58c68331773726b40df.png"
+                            alt="Profile Avatar">
+                        <p class="text-left font-weight-bold">Strive Student</p>
+                        <a href="#">Language</a>
+                        <a href="#">Playback setting</a>
+                        <a href="#">Subtitle appearance</a>
+                    </div>
+                    <div class="col right">
+                        <a href="#">Manage profiles</a>
+                    </div>
                 </div>
-                <div class="text-right">
-                    <a href="#">Manage profiles</a>
-                </div>
-            </div> 
+            </div>
         </div>
     </div>
     <hr>
@@ -222,17 +311,29 @@
                 </div>
             </div>
             <div class="col">
-                    <div class="row">
-                        <a href="#">Investor Relations</a>
-                    </div>
-                    <div class="row">
-                        <a href="#">Terms of Use</a>
-                    </div>
+                <div class="row">
+                    <a href="#">Investor Relations</a>
                 </div>
+                <div class="row">
+                    <a href="#">Terms of Use</a>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- Optional JavaScript -->
+    <script>
+        function search() {
+            var x = document.getElementById("search");
+            if (x.style.display === "none") {
+                x.style.display = "inline";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+
+    </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
