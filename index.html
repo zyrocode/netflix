@@ -84,11 +84,11 @@
         }
 
         .left {
-            text-align: left !important;
+            text-align: left ;
         }
 
         .right {
-            text-align: right !important;
+            text-align: right ;
         }
 
         .dropdown-menu {
@@ -125,6 +125,45 @@
             .navbar-nav {
                 display: none !important;
             }
+        }
+        @media screen and (max-width: 520px) {
+            .container {
+                background-color: white !important;
+                border: 1px solid black !important;
+                margin: 5% 5% !important;
+                padding: 4% !important;
+                text-align: left !important;
+                display:block;
+                width: 90%;
+            }
+
+            .right {
+                text-align: left !important;
+            }
+
+            .container a {
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border-top: 1px solid #a0a0a07a;
+                color:black;
+            }
+
+
+            .container a:hover {
+                text-decoration: underline !important;
+            }
+
+            .row {
+                display: block !important;
+            }
+
+            .footer a {
+            color: #999999 !important;
+            text-decoration: none;
+            padding-left: 6%;
+            font-size: 80%;
+        }
+
         }
     </style>
 </head>
@@ -280,7 +319,7 @@
         </div>
     </div>
     <hr>
-    <div class="container-fluid pl-5 pt-3 pb-3">
+    <div class="container-fluid pl-5 pt-3 pb-3 footer">
         <h6>Questions? Contact us.</h6>
         <div class="row">
             <div class="col">
