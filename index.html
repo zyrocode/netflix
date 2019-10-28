@@ -79,10 +79,10 @@
             padding: 2% 2%;
         }
 
-        nav i {
+        #iconSearch {
             color: #cccccc;
             padding: 2px;
-            position: relative;
+            position: inherit;
         }
 
         .left {
@@ -380,28 +380,20 @@
             </div>
         </div>
     </div>
-    <div class="search-wrapper">
-        <div class="input-holder">
-            <input type="text" class="search-input" placeholder="Type to search" />
-            <button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
-        </div>
-        <span class="close" onclick="searchToggle(this, event);"></span>
-        <div class="result-container">
 
-        </div>
-    </div>
 
     <!-- Optional JavaScript -->
     <script>
 
-        document.getElementById("iconSearch").addEventListener("click", search);
+        document.getElementById("iconSearch").addEventListener("click", icon);
+        document.getElementById("search").addEventListener("blur", hide)
         var searchBox = document.getElementById("search")
         var icon = document.getElementById("iconSearch")
 
 
         searchBox.style.display = "none"
 
-        function search() {
+        function icon() {
             var widthSearchBox = searchBox.offsetWidth
             if (searchBox.style.display === "none" || widthSearchBox < 50) {
                 searchBox.style.display = "inline"
@@ -410,6 +402,10 @@
             else
                 searchBox.style.display = "none"
             
+        }
+
+        function hide() {
+            searchBox.style.display = "none"
         }
 
 
