@@ -81,14 +81,16 @@
 
         nav i {
             color: #cccccc;
+            padding: 2px;
+            position: relative;
         }
 
         .left {
-            text-align: left ;
+            text-align: left;
         }
 
         .right {
-            text-align: right ;
+            text-align: right;
         }
 
         .dropdown-menu {
@@ -111,7 +113,15 @@
             background-color: black;
             border-radius: 0;
             color: #cccccc;
-            display: none;
+            width: 0px;
+            transition: all 0.17s ease-in-out;
+            font-size: 13px;
+            max-height: 28px;
+            border-color: black;
+        }
+
+        .mb-1 {
+            margin-bottom: 0px !important;
         }
 
         .form-control:focus {
@@ -119,6 +129,15 @@
             color: #cccccc;
             border-color: inherit;
             box-shadow: none;
+            width: 250px;
+            border-color: white;
+        }
+
+        .footer a {
+            color: #999999 !important;
+            text-decoration: none;
+            padding-left: 6%;
+            font-size: 80%;
         }
 
         @media screen and (max-width: 800px) {
@@ -126,6 +145,7 @@
                 display: none !important;
             }
         }
+
         @media screen and (max-width: 520px) {
             .container {
                 background-color: white !important;
@@ -133,7 +153,7 @@
                 margin: 5% 5% !important;
                 padding: 4% !important;
                 text-align: left !important;
-                display:block;
+                display: block;
                 width: 90%;
             }
 
@@ -145,7 +165,7 @@
                 padding-top: 10px;
                 padding-bottom: 10px;
                 border-top: 1px solid #a0a0a07a;
-                color:black;
+                color: black;
             }
 
 
@@ -158,11 +178,11 @@
             }
 
             .footer a {
-            color: #999999 !important;
-            text-decoration: none;
-            padding-left: 6%;
-            font-size: 80%;
-        }
+                color: #999999 !important;
+                text-decoration: none;
+                padding-left: 6%;
+                font-size: 80%;
+            }
 
         }
     </style>
@@ -190,8 +210,9 @@
                 <div class="md-form mb-1">
                     <input id="search" class="form-control" type="text" placeholder="Titles, people, genres"
                         aria-label="Search">
+                    <i class="fa fa-search mt-2 mr-3 ml-3" id="iconSearch"></i>
                 </div>
-                <i class="fa fa-search mt-2 mr-3 ml-3" onclick="search()"></i>
+
                 <div class="dropdown dropdown-toggle">
                     <img class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false"
@@ -359,17 +380,41 @@
             </div>
         </div>
     </div>
+    <div class="search-wrapper">
+        <div class="input-holder">
+            <input type="text" class="search-input" placeholder="Type to search" />
+            <button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
+        </div>
+        <span class="close" onclick="searchToggle(this, event);"></span>
+        <div class="result-container">
+
+        </div>
+    </div>
 
     <!-- Optional JavaScript -->
     <script>
+
+        document.getElementById("iconSearch").addEventListener("click", search);
+        var searchBox = document.getElementById("search")
+        var icon = document.getElementById("iconSearch")
+
+
+        searchBox.style.display = "none"
+
         function search() {
-            var x = document.getElementById("search");
-            if (x.style.display === "none") {
-                x.style.display = "inline";
-            } else {
-                x.style.display = "none";
+            var widthSearchBox = searchBox.offsetWidth
+            if (searchBox.style.display === "none" || widthSearchBox < 50) {
+                searchBox.style.display = "inline"
+                searchBox.focus()
             }
+            else
+                searchBox.style.display = "none"
+            
         }
+
+
+
+    </script>
 
 
     </script>
