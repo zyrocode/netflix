@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="shortcut icon" href="https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2016.ico">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -106,7 +107,7 @@
 
         .dropdown-item:hover {
             color: white !important;
-            text-decoration: underline;
+            text-decoration: underline !important;
         }
 
         .form-control {
@@ -145,8 +146,8 @@
                 display: none !important;
             }
         }
-
-        @media screen and (max-width: 520px) {
+        @import url("https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+        @media screen and (max-width: 580px) {
             .container {
                 background-color: white !important;
                 border: 1px solid black !important;
@@ -168,6 +169,18 @@
                 color: black;
             }
 
+            #iconSearch {
+                display: none;
+            }
+
+            .container a::after {
+                content: '\f054';
+                position: absolute;
+                right: 10px;
+                color: #000;
+                font-family: "Font Awesome\ 5 Free";
+                font-weight: 900;
+            }
 
             .container a:hover {
                 text-decoration: underline !important;
@@ -183,6 +196,7 @@
                 padding-left: 6%;
                 font-size: 80%;
             }
+
 
         }
     </style>
@@ -401,7 +415,7 @@
             }
             else
                 searchBox.style.display = "none"
-            
+
         }
 
         function hide() {
