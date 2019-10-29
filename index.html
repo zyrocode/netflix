@@ -76,6 +76,11 @@
             border-color: black;
         }
 
+        nav hr {
+            color: black !important;
+            margin: 5px auto;
+        }
+
         .container-fluid a {
             padding: 2% 2%;
         }
@@ -95,19 +100,25 @@
         }
 
         .dropdown-menu {
-            font-size: 14px;
-            left: -150%;
+            left: -200%;
+            margin-top: 17px !important;
         }
+
 
         .dropdown-item {
             background-color: black !important;
             color: white !important;
-            padding: 10px !important;
+            padding: 12px 10px!important;
+            font-size: 12px;
         }
 
         .dropdown-item:hover {
             color: white !important;
             text-decoration: underline !important;
+        }
+
+        .dropdown-item img {
+            padding-right: 5px;
         }
 
         .form-control {
@@ -141,12 +152,16 @@
             font-size: 80%;
         }
 
+        .man {
+            border-bottom: 1px solid #666666;
+        }
+
         @media screen and (max-width: 800px) {
             .navbar-nav {
                 display: none !important;
             }
         }
-        @import url("https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+
         @media screen and (max-width: 580px) {
             .container {
                 background-color: white !important;
@@ -232,7 +247,9 @@
                         aria-haspopup="true" aria-expanded="false"
                         src="https://occ-0-2473-778.1.nflxso.net/art/b40df/8bbeaad6a7c5764ba64eb58c68331773726b40df.png"
                         alt="Profile Avatar">
-                    <div class="dropdown-menu p-0" aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-menu p-0" id="menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#"><img src="https://occ-0-2473-778.1.nflxso.net/art/b40df/8bbeaad6a7c5764ba64eb58c68331773726b40df.png" alt="Avatar Profile">Strive Student</a>
+                        <a class="dropdown-item man" style="font-size: 12px;" href="#">Manage Profiles</a>
                         <a class="dropdown-item" href="#">Account</a>
                         <a class="dropdown-item" href="#">Help Center</a>
                         <a class="dropdown-item" href="#">Sign out of Netflix</a>
@@ -399,10 +416,11 @@
     <!-- Optional JavaScript -->
     <script>
 
-        document.getElementById("iconSearch").addEventListener("click", icon);
-        document.getElementById("search").addEventListener("blur", hide)
+        document.getElementById("iconSearch").addEventListener("click", icon)
+        document.getElementById("search").addEventListener("blur", hideSearchBar)
         var searchBox = document.getElementById("search")
         var icon = document.getElementById("iconSearch")
+
 
 
         searchBox.style.display = "none"
@@ -418,7 +436,8 @@
 
         }
 
-        function hide() {
+
+        function hideSearchBar() {
             searchBox.style.display = "none"
         }
 
